@@ -1,46 +1,46 @@
 # CircleTextProgressbar
 
-ÑÏÕñ½ÜµÄÖ÷Ò³: http://www.yanzhenjie.com
-ÑÏÕñ½ÜµÄ²©¿Í: http://blog.csdn.net/yanzhenjie1003
+ä¸¥æŒ¯æ°çš„ä¸»é¡µ: http://www.yanzhenjie.com  
+ä¸¥æŒ¯æ°çš„åšå®¢: http://blog.csdn.net/yanzhenjie1003
 
 ----
-# Ğ§¹ûÔ¤ÀÀ
+# æ•ˆæœé¢„è§ˆ
 <image src="./image/demo.gif" width="350px"/>
 
-#¼ò½éÓëÊ¹ÓÃ
-±¾ÖÊÊÇÒ»¸öTextView£¬ËùÒÔTextViewµÄ»ù±¾ÊôĞÔËü¶¼ÓĞ¡£
+#ç®€ä»‹ä¸ä½¿ç”¨
+æœ¬è´¨æ˜¯ä¸€ä¸ªTextViewï¼Œæ‰€ä»¥TextViewçš„åŸºæœ¬å±æ€§å®ƒéƒ½æœ‰ã€‚
 
-ÒòÎªÊµÔÚÊÇÌ«¼òµ¥ÁË£¬ÕâÀïÕ¹Ê¾ÏÂÔõÃ´ÉèÖÃÊôĞÔ£º
+å› ä¸ºå®åœ¨æ˜¯å¤ªç®€å•äº†ï¼Œè¿™é‡Œå±•ç¤ºä¸‹æ€ä¹ˆè®¾ç½®å±æ€§ï¼š
 ```java
-// ºÍÏµÍ³ÆÕÍ¨½ø¶ÈÌõÒ»Ñù£¬0-100¡£
+// å’Œç³»ç»Ÿæ™®é€šè¿›åº¦æ¡ä¸€æ ·ï¼Œ0-100ã€‚
 progressBar.setProgressType(CircleTextProgressbar.ProgressType.COUNT);
 
-// ¸Ä±ä½ø¶ÈÌõ¡£
-progressBar.setProgressLineWidth(30);// ½ø¶ÈÌõ¿í¶È¡£
-progressBar.setProgressLineWidth(3);// Ğ´Èë¿í¶È¡£
+// æ”¹å˜è¿›åº¦æ¡ã€‚
+progressBar.setProgressLineWidth(30);// è¿›åº¦æ¡å®½åº¦ã€‚
+progressBar.setProgressLineWidth(3);// å†™å…¥å®½åº¦ã€‚
 
-// ÉèÖÃµ¹¼ÆÊ±Ê±¼äºÁÃë£¬Ä¬ÈÏ3000ºÁÃë¡£
+// è®¾ç½®å€’è®¡æ—¶æ—¶é—´æ¯«ç§’ï¼Œé»˜è®¤3000æ¯«ç§’ã€‚
 progressBar.setTimeMillis(3500);
 
-// ¸Ä±ä½ø¶ÈÌõÑÕÉ«¡£
+// æ”¹å˜è¿›åº¦æ¡é¢œè‰²ã€‚
 progressBar.setProgressColor(Color.RED);
 
-// ¸Ä±äÍâ²¿±ß¿òÑÕÉ«¡£
+// æ”¹å˜å¤–éƒ¨è¾¹æ¡†é¢œè‰²ã€‚
 progressBar.setOutLineColor(Color.RED);
 
-// ¸Ä±äÔ²ĞÄÑÕÉ«¡£
+// æ”¹å˜åœ†å¿ƒé¢œè‰²ã€‚
 progressBar.setInCircleColor(Color.RED);
 
-// Ä£ÄâÍøÒ×ĞÂÎÅÌø¹ı¡£
-progressBar.setOutLineColor(Color.TRANSPARENT);// Íâ²¿ÂÖÀªÍ¸Ã÷¡£
-progressBar.setInCircleColor(Color.parseColor("#AAC6C6C6"));// ÖĞ¼äÔ²Îª»ÒÉ«¡£
-progressBar.setProgressColor(Color.DKGRAY);// ½ø¶ÈÌõÎª»ÒÉ«¡£
-progressBar.setProgressLineWidth(3); // ½ø¶ÈÌõ¿í¶ÈÎª3¡£
+// æ¨¡æ‹Ÿç½‘æ˜“æ–°é—»è·³è¿‡ã€‚
+progressBar.setOutLineColor(Color.TRANSPARENT);// å¤–éƒ¨è½®å»“é€æ˜ã€‚
+progressBar.setInCircleColor(Color.parseColor("#AAC6C6C6"));// ä¸­é—´åœ†ä¸ºç°è‰²ã€‚
+progressBar.setProgressColor(Color.DKGRAY);// è¿›åº¦æ¡ä¸ºç°è‰²ã€‚
+progressBar.setProgressLineWidth(3); // è¿›åº¦æ¡å®½åº¦ä¸º3ã€‚
 ```
 
-½ø¶È¼àÌı
+è¿›åº¦ç›‘å¬
 ```java
-// ¼àÌı½ø¶È¡£
+// ç›‘å¬è¿›åº¦ã€‚
 progressBar1.setCountdownProgressListener(1, progressListener);
 progressBar2.setCountdownProgressListener(2, progressListener);
 
@@ -52,9 +52,28 @@ OnCountdownProgressListener progressListener = new OnCountdownProgressListener()
         } else if (what == 2) {
             progressBar2.setText(progress + "%");
         }
-        // ±ÈÈçÔÚÊ×Ò³£¬ÕâÀï¿ÉÒÔÅĞ¶Ï½ø¶È£¬½ø¶Èµ½ÁË100»òÕß0µÄÊ±ºò£¬Äã¿ÉÒÔ×öÌø¹ı²Ù×÷¡£
+        // æ¯”å¦‚åœ¨é¦–é¡µï¼Œè¿™é‡Œå¯ä»¥åˆ¤æ–­è¿›åº¦ï¼Œè¿›åº¦åˆ°äº†100æˆ–è€…0çš„æ—¶å€™ï¼Œä½ å¯ä»¥åšè·³è¿‡æ“ä½œã€‚
     }
 };
+```
+
+# License
+```
+/*
+ * Copyright 2016 Yan Zhenjie
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 ```
 
 [0]: [http://www.yanzhenjie.com]
